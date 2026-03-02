@@ -37,7 +37,11 @@ brew upgrade --cask omni-mind
 ### 卸载应用
 
 ```bash
+# 仅卸载应用（保留数据）
 brew uninstall --cask omni-mind
+
+# 完全卸载（包括应用数据）
+brew uninstall --zap --cask omni-mind
 ```
 
 ### 移除 Tap
