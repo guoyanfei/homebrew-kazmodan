@@ -13,20 +13,20 @@ Kazmodan 软件仓库，通过 Homebrew 安装应用。
 ### 添加 Tap
 
 ```bash
-brew tap kazmodan/kazmodan https://github.com/guoyanfei/homebrew-kazmodan.git
+brew tap guoyanfei/kazmodan
 ```
 
 ### 安装应用
 
 ```bash
-# 安装 OmniMind
-brew install --cask omni-mind
+# 安装 OmniMind（--no-quarantine 避免 macOS "已损坏"提示）
+brew install --cask --no-quarantine omni-mind
 ```
 
 ### 更新应用
 
 ```bash
-brew upgrade --cask omni-mind
+brew upgrade --cask --no-quarantine omni-mind
 ```
 
 ### 卸载应用
@@ -38,5 +38,5 @@ brew uninstall --cask omni-mind
 ### 移除 Tap
 
 ```bash
-brew untap kazmodan/kazmodan
+brew untap guoyanfei/kazmodan
 ```
