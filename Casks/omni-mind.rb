@@ -1,9 +1,9 @@
 cask "omni-mind" do
-  version "0.1.9"
-  sha256 "ce81344f24adea1ec812ff1a2d65f582692c61fe53e59e2a3ebbd48bc20e8856"
+  version "0.1.10"
+  sha256 "bded177a88cc87b033d69aa0d6799d80fa0469def84b580b85e47a315ec5e345"
 
   # 阿里云 OSS 下载地址（由 release.sh 自动更新）
-  url "https://yun2.kazmodan.com/target/omni-mind/OmniMind_0.1.9_aarch64.dmg"
+  url "https://yun2.kazmodan.com/target/omni-mind/OmniMind_0.1.10_aarch64.dmg"
 
   name "OmniMind"
   desc "个人全景管理系统 - Tauri 桌面应用"
