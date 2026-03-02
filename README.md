@@ -21,9 +21,6 @@ brew tap kazmodan/kazmodan https://github.com/guoyanfei/homebrew-kazmodan.git
 ```bash
 # 安装 OmniMind
 brew install --cask omnimind
-
-# 安装其他应用
-# brew install --cask <app-name>
 ```
 
 ### 更新应用
@@ -46,6 +43,31 @@ brew untap kazmodan/kazmodan
 
 ## 发布新版本
 
+### 方式1：使用自动化脚本（推荐）
+
+在 omni-mind 项目根目录运行：
+
+```bash
+# patch 版本更新（0.1.0 -> 0.1.1）
+./release.sh patch
+
+# minor 版本更新（0.1.0 -> 0.2.0）
+./release.sh minor
+
+# major 版本更新（0.1.0 -> 1.0.0）
+./release.sh major
+```
+
+脚本会自动完成：
+1. 更新 package.json 和 tauri.conf.json 版本号
+2. 构建 dmg
+3. 计算 SHA256
+4. 上传到阿里云 OSS
+5. 更新本仓库的 Cask 文件
+6. 推送到 GitHub
+
+### 方式2：手动发布
+
 1. 构建新的 dmg 文件：
    ```bash
    npm run tauri build
@@ -56,15 +78,15 @@ brew untap kazmodan/kazmodan
    shasum -a 256 src-tauri/target/release/bundle/dmg/OmniMind_X.X.X_aarch64.dmg
    ```
 
-3. 上传 dmg 到发布服务器（Gitea Releases / GitHub Releases / 自托管服务器）
+3. 上传 dmg 到阿里云 OSS
 
 4. 更新 `Casks/omnimind.rb`：
    - 修改 `version`
    - 修改 `sha256`
-   - 修改 `url`（如果下载地址变化）
 
 5. 提交并推送更新：
    ```bash
+   cd ~/Documents/personal/code/homebrew-kazmodan
    git add Casks/omnimind.rb
    git commit -m "omnimind: bump version to X.X.X"
    git push
@@ -80,7 +102,7 @@ brew untap kazmodan/kazmodan
      version "X.X.X"
      sha256 "YOUR_SHA256_HASH"
 
-     url "https://your-download-url/#{version}/YourApp_#{version}_aarch64.dmg"
+     url "https://your-bucket.oss-cn-hangzhou.aliyuncs.com/path/YourApp_#{version}_aarch64.dmg"
      name "Your App Name"
      desc "App description"
      homepage "https://your-homepage"
