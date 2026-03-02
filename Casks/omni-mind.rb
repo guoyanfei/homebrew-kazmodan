@@ -15,6 +15,13 @@ cask "omni-mind" do
 
   app "OmniMind.app"
 
+  # 安装后移除隔离属性（避免"已损坏"提示）
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/OmniMind.app"],
+                   sudo: false
+  end
+
   # 卸载时的清理
   zap trash: [
     "~/Library/Application Support/com.kazmodan.omni-mind",

@@ -19,14 +19,19 @@ brew tap guoyanfei/kazmodan
 ### 安装应用
 
 ```bash
-# 安装 OmniMind（--no-quarantine 避免 macOS "已损坏"提示）
-brew install --cask --no-quarantine omni-mind
+# 安装 OmniMind
+brew install --cask omni-mind
 ```
+
+> **注意**：首次打开若提示"已损坏"，请在终端运行：
+> ```bash
+> xattr -cr /Applications/OmniMind.app
+> ```
 
 ### 更新应用
 
 ```bash
-brew upgrade --cask --no-quarantine omni-mind
+brew upgrade --cask omni-mind
 ```
 
 ### 卸载应用
