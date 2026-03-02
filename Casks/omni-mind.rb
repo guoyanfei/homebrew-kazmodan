@@ -1,6 +1,6 @@
 cask "omni-mind" do
-  version "0.1.0"
-  sha256 "c6d4b38fab3d4977633a8ecbcb463afe0ede9d86029e517972ce41193e0b03a3"
+  version "0.1.1"
+  sha256 ""
 
   # 阿里云 OSS 下载地址（由 release.sh 自动更新）
   url "https://your-bucket-name.oss-cn-hangzhou.aliyuncs.com/omnimind/OmniMind_#{version}_aarch64.dmg"
