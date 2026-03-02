@@ -6,7 +6,7 @@ Kazmodan 软件仓库，通过 Homebrew 安装应用。
 
 | 软件 | 描述 |
 |------|------|
-| omnimind | 个人全景管理系统 - Tauri 桌面应用 |
+| omni-mind | 个人全景管理系统 - Tauri 桌面应用 |
 
 ## 使用方法
 
@@ -20,19 +20,19 @@ brew tap kazmodan/kazmodan https://github.com/guoyanfei/homebrew-kazmodan.git
 
 ```bash
 # 安装 OmniMind
-brew install --cask omnimind
+brew install --cask omni-mind
 ```
 
 ### 更新应用
 
 ```bash
-brew upgrade --cask omnimind
+brew upgrade --cask omni-mind
 ```
 
 ### 卸载应用
 
 ```bash
-brew uninstall --cask omnimind
+brew uninstall --cask omni-mind
 ```
 
 ### 移除 Tap
@@ -80,15 +80,15 @@ brew untap kazmodan/kazmodan
 
 3. 上传 dmg 到阿里云 OSS
 
-4. 更新 `Casks/omnimind.rb`：
+4. 更新 `Casks/omni-mind.rb`：
    - 修改 `version`
    - 修改 `sha256`
 
 5. 提交并推送更新：
    ```bash
    cd ~/Documents/personal/code/homebrew-kazmodan
-   git add Casks/omnimind.rb
-   git commit -m "omnimind: bump version to X.X.X"
+   git add Casks/omni-mind.rb
+   git commit -m "omni-mind: bump version to X.X.X"
    git push
    ```
 
@@ -125,11 +125,11 @@ brew untap kazmodan/kazmodan
 
 ```bash
 # 审计 Cask 文件
-brew audit --cask Casks/omnimind.rb
+brew audit --cask Casks/omni-mind.rb
 
 # 本地安装测试
-brew install --cask Casks/omnimind.rb
+brew install --cask Casks/omni-mind.rb
 
 # 样式检查
-brew style Casks/omnimind.rb
+brew style Casks/omni-mind.rb
 ```

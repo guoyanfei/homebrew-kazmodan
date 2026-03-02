@@ -1,4 +1,4 @@
-cask "omnimind" do
+cask "omni-mind" do
   version "0.1.0"
   sha256 "c6d4b38fab3d4977633a8ecbcb463afe0ede9d86029e517972ce41193e0b03a3"
 
